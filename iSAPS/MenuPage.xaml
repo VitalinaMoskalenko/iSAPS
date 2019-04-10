@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:iSAPS;assembly=iSAPS"
+             x:Class="iSAPS.MenuPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <ContentPage.Content>
+                <Grid Grid.Column="5" Grid.Row="15">
+                    <Grid.Resources>
+                        <Style x:Key="MarginStyleFirst" TargetType="ActivityIndicator">
+                            <Setter Property="Margin">
+                                <Setter.Value>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="Android" Value="0, -23, 0 ,23"/>
+                                        <On Platform="iOS" Value="0, -58, 0, 58" />
+                                    </OnPlatform>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style x:Key="MarginStyleAll" TargetType="ActivityIndicator">
+                            <Setter Property="Margin">
+                                <Setter.Value>
+                                    <OnPlatform x:TypeArguments="Thickness">
+                                        <On Platform="Android" Value="10, -23, 0 ,25"/>
+                                        <On Platform="iOS" Value="10, -58, 0, 60" />
+                                    </OnPlatform>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </Grid.Resources>
+                    <Image Aspect="AspectFit" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Source="backgroundISAPS.jpg" Grid.RowSpan="5" Grid.ColumnSpan="5" Grid.Column="0" Grid.Row="0"></Image>
+
+                    <Image Source="wsg_logo_c8.png"  Margin="10, 0" Grid.Column="0" Grid.Row="0" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label  Margin="0, -10" Text="iSAPS" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="5" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" Font="Bold,32"/>
+                    <BoxView x:Name="bvFinance" Style="{StaticResource MarginStyleFirst}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgFinance" Source="money_1.png" Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="5" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblFinance" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Finanse" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvSession" Style="{StaticResource MarginStyleFirst}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgSession" Source="time_1.png"  Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="6" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblSession" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Aktualne sesje" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvClassSchedule" Style="{StaticResource MarginStyleFirst}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgClassSchedule" Source="calendar_1.png"  Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="7" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblClassSchedule" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Rozklad zajęć" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvNews" Style="{StaticResource MarginStyleFirst}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgNews" Source="home_1.png" Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="8" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblNews" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Aktualności" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvHelpDesk" Style="{StaticResource MarginStyleFirst}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgHelpDesk" Source="help_1.png" Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="9" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblHelpDesk" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Help desk" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvProffesor" Style="{StaticResource MarginStyleFirst}" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgProffesor" Source="proffesor_1.png" Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="10" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblProffesor" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Wykladowcy" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <BoxView x:Name="bvProffile" Style="{StaticResource MarginStyleFirst}" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="5"></BoxView>
+                    <Image x:Name="imgProffile" Source="avatar.png" Style="{StaticResource MarginStyleAll}" Grid.Column="0" Grid.Row="11" WidthRequest="250" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Label TextColor="#2196f3" x:Name="lblProffile" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="4" Style="{StaticResource MarginStyleAll}" Text="Mój profil" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                    <Image x:Name="imgLogOut" Source="logout.png" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="5" Margin="10, 0" VerticalOptions="End" HorizontalOptions="End"></Image>
+                </Grid>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:NewsPage />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

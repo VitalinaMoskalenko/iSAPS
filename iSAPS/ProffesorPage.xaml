@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iSAPS.ProffesorPage">
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="LvRowHeight" x:TypeArguments="x:Int32">
+                <On Platform="iOS">70</On>
+                <On Platform="Android">70</On>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Picker FontSize="20" TextColor="Black" Title="Wybierz wykladowcę" x:Name="ProffesorsNameView" Margin="15, 15, 0, 0" Grid.Column="0" Grid.Row="0" VerticalOptions="Start" HorizontalOptions="End"/>
+            <ListView x:Name="ProffesorsView" Margin="0, 50, 0, 0" RowHeight="{StaticResource LvRowHeight}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="circle_picture_color.png"  Margin="10, 30, 0, 30" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                <Label Font="Bold,14" TextColor="Black" VerticalOptions="Center" HorizontalOptions="Center" Margin="25, 0, 0, 0" Grid.Column="0" Text="{Binding DateStartEnd}"></Label>
+                                <Label Font="14" TextColor="Black" Margin="0, 0, 50, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding TitleLector}"></Label>
+                                <Label Font="Bold,14" TextColor="Black" Margin="0, 0, 10, 0" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2" Text="{Binding lecturers_room}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iSAPS.HelpDeskPage">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <Label Text="Biuro Obsługi Studenta" TextColor="#2196f3" Margin="15, 15, 0, 0" Grid.Column="0" Grid.Row="0" Font="Bold,20" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Image Source="location_001.png" Grid.Row="0" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Row="0" Font="14" TextColor="Black" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="ul. Garbary 2 (bud. G, pok. 006) 85-229 Bydgoszcz"></Label>
+                
+                <Image Source="phone.png" Grid.Row="1" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label x:Name="lblCallDeanFirst" Grid.Row="1" Font="14" TextColor="#2196f3" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="tel. (52) 567 00 45"></Label>
+                
+                <Image Source="phone.png" Grid.Row="2" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label x:Name="lblCallDeanSekond" Grid.Row="2" Font="14" TextColor="#2196f3" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="fax. (52) 567 07 77"></Label>
+                
+                <Image Source="filled_message.png" Grid.Row="3" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Row="3" Font="14" TextColor="Black" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="dziekanat@byd.pl"></Label>
+            </Grid>
+            <Label Text="Biuro Rekrutacji" TextColor="#2196f3" Margin="15, 15, 0, 0" Grid.Column="0" Grid.Row="0" Font="Bold,20" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <Image Source="location_001.png" Grid.Row="0" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Row="0" Font="14" TextColor="Black" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="ul. Garbary 2 (bud. C, pok. C5) 85-229 Bydgoszcz"></Label>
+                
+                <Image Source="phone.png" Grid.Row="1" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label x:Name="lblCallRecrutation" Grid.Row="1" Font="14" TextColor="#2196f3" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="tel. 52 567 00 00"></Label>
+                
+                <Image Source="filled_message.png" Grid.Row="2" Margin="12, 7, 5, 7" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Label Grid.Row="2" Font="14" TextColor="Black" Margin="0, 0, 25, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="rekrutacja@byd.pl"></Label>
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

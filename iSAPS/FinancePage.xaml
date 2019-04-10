@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iSAPS.FinancePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="LvRowHeight" x:TypeArguments="x:Int32">
+                <On Platform="iOS">100</On>
+                <On Platform="Android">100</On>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+   
+        
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid>
+            <Label Text="Harmonogram opłat" TextColor="#2196f3" Margin="15, 15, 0, 0" Font="Bold,20" Grid.Row="0" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <Label Text="Numer rachunku bankowego:" TextColor="#000000" Grid.Row="0" Margin="15, 40, 0, 15" Font="14" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <Label x:Name="lblBankAccount" Text="" TextColor="#000000" Grid.Row="0" Margin="15, 65, 0, 15" Font="Bold,16" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <ListView x:Name="FinanceView" Margin="0, 100, 0, 0" RowHeight="{StaticResource LvRowHeight}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="False" Margin="-80, -25, 0, 38" WidthRequest="35" HeightRequest="35"> Orientation="Horizontal" VerticalOptions="StartAndExpand" HorizontalOptions="Start" Grid.Column="0">
+                                    <Image Source="money_1.png" WidthRequest="20" HeightRequest="20" Margin="7, 12, 15, 12" Grid.Column="0" />
+                                </Frame>
+                                <Label Font="Bold, 14" TextColor="Black" Margin="35, 0, -10, 0"  VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding ShowFinanceTitle}"></Label>
+                                <Label Font="14" TextColor="Black" Margin="25, 0, 0, 0"  VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="2" Text="{Binding ShowFinanceValue}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

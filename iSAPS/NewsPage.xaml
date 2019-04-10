@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iSAPS.NewsPage"
+             BackgroundColor="White">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="LvRowHeight" x:TypeArguments="x:Int32">
+                <On Platform="iOS">50</On>
+                <On Platform="Android">50</On>
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Label Text="Aktualności" TextColor="#2196f3" Margin="15, 15, 0, 0" Grid.Column="0" Grid.Row="0" Font="Bold,20" VerticalOptions="Start" HorizontalOptions="Center"></Label>
+            <ListView ItemSelected="OnItemSelected" x:Name="NewsView" Margin="0, 50, 0, 0" RowHeight="{StaticResource LvRowHeight}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="circle_picture_color.png"  Margin="5, 18, 0, 18" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                
+                                <Label Font="14" TextColor="Black" Margin="25, 0, 0, 0"  VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="0" Text="{Binding author}"></Label>
+                                <Label Font="Bold,14" TextColor="Black" Margin="0, 0, 75, 0" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding title}"></Label>                                
+                                <Label Font="14" TextColor="Black" Margin="0, 0, 10, 0" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2" Text="{Binding Date}"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>
